@@ -1,3 +1,7 @@
+---
+title: Research Note 001
+---
+
 **Date:** 2026-03-23  
 **Author:** skuaintel
 
