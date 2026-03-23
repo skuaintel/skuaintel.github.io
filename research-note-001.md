@@ -108,7 +108,7 @@ Key Findings:
   - A multi-CA history shows infrastructure has changed over time, with possible migration between providers and is normal for long-lived domains.
   - Supports wildcard coverage across subdomains.
 
-<img width="1900" height="1151" alt="crt-sh-example-com" src="https://github.com/user-attachments/assets/f3a77bdb-a79f-44ee-9806-99e9c7244b2f" />
+<img alt="crt-sh-example-com" src="https://github.com/user-attachments/assets/f3a77bdb-a79f-44ee-9806-99e9c7244b2f" />
 
 The origin infrastructure is likely obscured, as Cloudflare terminates TLS connections and proxies traffic between clients and the backend server.
 
