@@ -50,20 +50,20 @@ This confirms the domain is fronted by a CDN, meaning the real server location i
 
 
 ### TLS Certificate Check of example.com
-Subject Alternative Name (SAN):
+#### Subject Alternative Name (SAN):
   - example.com (matched host)
 
 <img width="598" height="19" alt="san-example-com" src="https://github.com/user-attachments/assets/fcbda4ac-335b-4eb5-aae9-f0138fcd4f6c" />
 
 
-Issuer:
+#### Issuer:
   - O=SSL Corporation
   - CN=Cloudflare TLS Issuing ECC CA 3
 
 <img width="590" height="19" alt="issuer-example com" src="https://github.com/user-attachments/assets/dba2b8c9-26c5-4450-b27f-545980b132e7" />
 
 
-Validity Period:
+#### Validity Period:
   - Start: Feb 13, 2026
   - Expiry: May 14, 2026
 
@@ -72,7 +72,7 @@ This indicates automated certificate management, which is typical of CDN-managed
 <img width="395" height="44" alt="Validity-Period-example-com" src="https://github.com/user-attachments/assets/cc1d392f-d106-485c-9e20-e60f76f56ca0" />
 
 
-Cryptography
+#### Cryptography
 Leaf Certificate (Level 0):
   - Key Type: EC (prime256v1 / P-256)
   - Signature Algorithm: ECDSA with SHA-256
@@ -88,7 +88,7 @@ Mixed chain (ECC and RSA root), common in public PKI
 <img width="932" height="85" alt="SSL-Chain-Example-Com" src="https://github.com/user-attachments/assets/67b70ab8-67d9-48f5-9295-fc2b95b4fafb" />
 
 
-TLS Protocol  
+#### TLS Protocol  
 TLS Version: TLS 1.3  
 Session Feature: NewSessionTicket observed  
 ALPN: HTTP/2 negotiated  
