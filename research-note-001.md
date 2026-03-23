@@ -3,7 +3,7 @@
 
 # Research Note 001: Infrastructure Analysis of example.com
 
-This investigation examines the infrastructure behind the domain example.com so we can understand its hosting, ownership and TLS configuration.
+This investigation examines the infrastructure behind the domain example.com so we can understand its hosting, ownership and TLS configuration.  
 The goal is for us to demonstrate a simple methodology for domain level investigation using tools commonly found. 
 
 ## Method
@@ -25,14 +25,14 @@ These IPs fall within Cloudflare-owned address space, indicating that traffic to
 
 <img width="560" height="344" alt="dig-on-example-com" src="https://github.com/user-attachments/assets/a8eda2bb-b42f-457b-9025-9a03e0528344" />
 
-We can also check nslookup on example.com to see the same results
+We can also check nslookup on example.com to see the same results.
 
 <img width="484" height="212" alt="nslookup-on-example-com" src="https://github.com/user-attachments/assets/807b9883-595a-4982-8f09-c68e93fb0742" />
 
 ### WHOIS (Domain Info) example.com
-Registrar: RESERVED-Internet Assigned Numbers Authority (IANA)
-Name servers: ELLIOT.NS.CLOUDFLARE.COM, HERA.NS.CLOUDFLARE.COM
-Registered on: 08/14/1995 at 04:00
+Registrar: RESERVED-Internet Assigned Numbers Authority (IANA)  
+Name servers: ELLIOT.NS.CLOUDFLARE.COM, HERA.NS.CLOUDFLARE.COM  
+Registered on: 08/14/1995 at 04:00  
 
 This indicates the domain is reserved and not owned by a typical organisation, confirming it is used for documentation/testing.
 
@@ -40,9 +40,9 @@ This indicates the domain is reserved and not owned by a typical organisation, c
 
 
 ### WHOIS (IP Information) example.com
-Organisation: Cloudflare, Inc (CLOUD14)
-ASN: ASN information wasn't returned in this query, however the IP range (104.16.0.0/12) is known to belong to Cloudflare.
-Network range: 104.16.0.0 - 104.31.255.255 (104.16.0.0/12)
+Organisation: Cloudflare, Inc (CLOUD14)  
+ASN: ASN information wasn't returned in this query, however the IP range (104.16.0.0/12) is known to belong to Cloudflare.  
+Network range: 104.16.0.0 - 104.31.255.255 (104.16.0.0/12)  
 
 This confirms the domain is fronted by a CDN, meaning the real server location is hidden and traffic is proxied.
 
@@ -88,10 +88,10 @@ Mixed chain (ECC and RSA root), common in public PKI
 <img width="932" height="85" alt="SSL-Chain-Example-Com" src="https://github.com/user-attachments/assets/67b70ab8-67d9-48f5-9295-fc2b95b4fafb" />
 
 
-TLS Protocol
-TLS Version: TLS 1.3
-Session Feature: NewSessionTicket observed
-ALPN: HTTP/2 negotiated
+TLS Protocol  
+TLS Version: TLS 1.3  
+Session Feature: NewSessionTicket observed  
+ALPN: HTTP/2 negotiated  
 
 TLS 1.3 is a modern secure configuration for handling data in transit.
 
@@ -100,7 +100,7 @@ TLS 1.3 is a modern secure configuration for handling data in transit.
 
 ### Certificate Transparency
 
-Searching on crt.sh for example.com we can see the following output. 
+Searching on [crt.sh](https://crt.sh/?q=example.com) for example.com we can see the following output. 
 
 Key Findings:
   - Domain is actively fronted by Cloudflare
@@ -114,10 +114,10 @@ The origin infrastructure is likely obscured, as Cloudflare terminates TLS conne
 
 ### Summary of Key Observations
 
-  - The domain is fronted by Cloudflare infrastructure, obscuring origin hosting
-  - DNS, TLS, and IP data consistently indicate CDN-based delivery
-  - Short-lived certificates and TLS 1.3 suggest automated, modern configuration
-  - Historical certificate data indicates long-term use with evolving infrastructure
+  - The domain is fronted by Cloudflare infrastructure, obscuring origin hosting.
+  - DNS, TLS, and IP data consistently indicate CDN-based delivery.
+  - Short-lived certificates and TLS 1.3 suggest automated, modern configuration.
+  - Historical certificate data indicates long-term use with evolving infrastructure.
 
 These characteristics are consistent with professionally managed web infrastructure.
 
